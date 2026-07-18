@@ -1,137 +1,313 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Dylan Lim</title>
-    <meta name="description" content="Defense, national security, and intelligence." />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Dylan Lim, Mission Engineer specializing in aerospace, defense, and autonomous systems.">
+    <title>Dylan Lim | Mission Engineer</title>
+    
+    <!-- Importing Public Sans and Roboto Mono from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <body>
-    <!-- <header class="site-header">
-      <a class="logo" href="#"><span>DL</span></a>
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-      </nav>
-    </header> -->
+    <style>
+        :root {
+            /* Black on Off-White Color Scheme */
+            --bg-color: #f8f8f6;         
+            --section-bg: #f2f2ef;       
+            --text-color: #4a4a4a;       
+            --heading-color: #111111;    
+            --card-bg: #ffffff;          
+            --border-color: #d1d1cd;     
+            --accent-color: #111111;     
+        }
+
+        /* Universal Box Sizing */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Public Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            color: var(--heading-color);
+            font-weight: 500; 
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin: 0;
+        }
+
+        .mono-text {
+            font-family: 'Roboto Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            padding: 6rem 0 6rem 0; 
+            background-color: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .intro-content {
+            display: flex;
+            align-items: stretch;
+            gap: 4rem;
+        }
+
+        /* Profile Column */
+        .profile-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; 
+            flex-shrink: 0;
+            width: 200px; 
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            background-color: #e0e0e0; 
+            border: 1px solid var(--border-color);
+        }
+
+        /* Right text column */
+        .intro-text {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .intro-text h1 {
+            font-size: 3.5rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            line-height: 1; 
+        }
+
+        .current-role {
+            font-size: 1.2rem; 
+            color: var(--heading-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .places-worked {
+            font-size: 0.85rem; 
+            color: #666666; 
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-text p.bio {
+            margin-bottom: 0; 
+            font-size: 1.05rem; 
+            font-weight: 300; 
+            max-width: 700px;
+        }
+
+        .btn-brutal {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 0.6rem 1.5rem;
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-align: center;
+            transition: all 0.2s ease;
+            width: 100%; 
+        }
+
+        .btn-brutal:hover {
+            background-color: var(--accent-color);
+            color: #ffffff; 
+        }
+
+        /* Programs Section */
+        .programs-section {
+            padding: 2.5rem 0 5rem 0;
+            background-color: var(--section-bg);
+        }
+
+        .programs-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem; 
+            display: block; 
+        }
+
+        /* Line moved underneath the title */
+        .programs-section h2::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: var(--border-color);
+            margin-top: 1rem; 
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.2s ease;
+            height: 280px; /* Locked height for perfect 50/50 split */
+        }
+
+        .gallery-card:hover {
+            border-color: var(--accent-color); 
+        }
+
+        .card-image {
+            width: 100%;
+            height: 50%; /* Exactly half the card height */
+            background-color: #e0e0e0; 
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            height: 50%; /* Exactly half the card height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Vertically centers the text */
+            align-items: flex-start;
+        }
+
+        .card-meta {
+            margin-bottom: 0.75rem;
+        }
+
+        .company-tag {
+            font-size: 0.7rem; 
+            color: var(--heading-color);
+            border: 1px solid var(--border-color);
+            padding: 0.25rem 0.5rem;
+        }
+
+        .gallery-card h3 {
+            font-size: 1.15rem; 
+            margin-bottom: 0; /* Removed bottom margin since there is no bio text below it */
+        }
+
+        @media (max-width: 750px) {
+            .intro-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2.5rem;
+            }
+            .profile-column {
+                width: 100%;
+                max-width: 300px;
+                gap: 1.5rem; 
+            }
+            .profile-pic {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 1 / 1;
+            }
+        }
+    </style>
+</head>
+<body>
 
     <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <p class="eyebrow">Defense · National Security · Intelligence</p>
-        <h1 id="hero-title">Hi, I'm Dylan.</h1>
-        <p class="subhead mission-title">
-          MISSION ENGINEER
-        </p>
-        <!-- <div class="cta-row">
-          <a class="btn" href="#work">View Work</a>
-          <a class="link" href="mailto:you@domain.com">Contact</a>
-        </div> -->
-      </section>
+        <!-- Introduction Section -->
+        <section class="intro-section">
+            <div class="container intro-content">
+                
+                <!-- Left Profile Column -->
+                <div class="profile-column">
+                    <img src="images\profile.png" alt="Profile Picture" class="profile-pic" width="200" height="200" loading="eager">
+                    <a href="https://www.linkedin.com/in/dylan-l-lim/" class="btn-brutal mono-text" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+                
+                <!-- Right Text Column -->
+                <div class="intro-text">
+                    <h1>Dylan Lim</h1>
+                    
+                    <div class="mono-text role-lines">
+                        <div class="current-role">MISSION ENGINEER</div>
+                        <div class="places-worked">ANDURIL INDUSTRIES, ROCKET LAB, NATIONAL NUCLEAR SECURITY ADMINISTRATION</div>
+                    </div>
 
-      <!-- ===== ABOUT SECTION ===== -->
-      <section id="about" class="section">
-        <h2 class="section-title">About</h2>
-
-        <div class="about-grid">
-          <div class="about-text">
-            <p>
-              I design, build, and deploy mission-critical systems where reliability, speed to field, 
-              and operator trust define success. My work spans autonomous platforms and AI-driven
-              systems engineered for asymmetric advantage, built to perform when every second and every life matters.
-            </p>
-            <ul class="facts">
-              <!-- <li><span>Clearance:</span> Eligible</li> -->
-              <li><span>domains:</span> air dominance, precision strike, autonomous platforms</li>
-              <li><span>specialties:</span> simulations & modeling, embedded systems, AI integration</li>
-            </ul>
-          </div>
-
-          <!-- Image placeholder -->
-          <div class="about-photo">
-            <div class="photo-frame">
-              <!-- Replace the image below later -->
-              <img src="images/anduril-yfq-44a-fury-first-flight.webp" alt="Anduril Fury">
-              <!-- <div class="photo-placeholder">Your Image Here</div> -->
+                    <p class="bio">
+                        My technical focus is military and aerospace missions and operations. I have 
+                        primarily worked on the modeling, simulation, and analysis of missile, electronic 
+                        warfare, and guidance, navigation, and control systems. My background is in computer 
+                        science, artificial intelligence, and supervised machine learning.
+                    </p>
+                </div>
             </div>
-          </div>
-        </div>
+        </section>
 
-        <div class="cta-row">
-          <a class="btn" target="_blank" href="https://www.linkedin.com/m/in/dylan-l-lim/">LinkedIn</a>
-          <!-- <a class="link" href="mailto:you@domain.com">Contact</a> -->
-        </div>
-      </section>
+        <!-- Mission Contributions Gallery -->
+        <section class="programs-section">
+            <div class="container">
+                <h2>Mission Contributions</h2>
 
-      <!-- ===== WORK SECTION ===== -->
-      <section id="work" class="section">
-        <h2 class="section-title">Select Work</h2>
+                <div class="gallery-grid">
+                    
+                    <!-- Barracuda Card -->
+                    <div class="gallery-card">
+                        <img src="images\barracuda.png" alt="Barracuda" class="card-image" loading="lazy">
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="company-tag mono-text">ANDURIL INDUSTRIES</span>
+                            </div>
+                            <h3>Barracuda-M</h3>
+                        </div>
+                    </div>
 
-        <div class="work-grid">
-          <article class="card">
-            <header>
-              <h3>Unmanned Aerial Vehicles</h3>
-              <p class="meta">Air · Systems Engineering</p>
-            </header>
-            <p>Conduct autonomous missions (threat avoidance, detection and classification, payload delivery).</p>
-          </article>
+                    <!-- Globalstar Constellation Card -->
+                    <div class="gallery-card">
+                        <img src="images\globalstar.jpg" alt="Globalstar Satellites" class="card-image" loading="lazy">
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="company-tag mono-text">ROCKET LAB</span>
+                            </div>
+                            <h3>Globalstar Constellation</h3>
+                        </div>
+                    </div>
 
-          <article class="card">
-            <header>
-              <h3>Satellite Systems</h3>
-              <p class="meta">Space · Embedded Engineering</p>
-            </header>
-            <p>Remote Experimentation and Analysis of Low Orbit Phenomena satellite system, NASA launch contract.</p>
-          </article>
+                    <!-- NNSA Card -->
+                    <div class="gallery-card">
+                        <img src="images/NNSA.png" alt="NNSA" class="card-image" loading="lazy">
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="company-tag mono-text">NNSA</span>
+                            </div>
+                            <h3>Nuclear Program</h3>
+                        </div>
+                    </div>
 
-          <article class="card">
-            <header>
-              <h3>National Nuclear Defense</h3>
-              <p class="meta">Ground · Intelligence</p>
-            </header>
-            <p>Real-time, geospatial systems supporting military application of the nuclear weapons program.</p>
-            <footer>
-              <a href="https://www.energy.gov/nnsa/national-nuclear-security-administration" class="link" target="_blank">
-                Learn about the mission →
-              </a>
-            </footer>
-          </article>
-
-          <article class="card">
-            <header>
-              <h3>Missile Flight Simulation</h3>
-              <p class="meta">Air · Guidance and Control</p>
-            </header>
-            <p>Proportional navigation for air-to-air missile trajectory and collision.</p>
-          </article>
-
-          <article class="card">
-            <header>
-              <h3>Flight and Load Scheduling</h3>
-              <p class="meta">Air · Logistics and Supply Chain</p>
-            </header>
-            <p>Manage aircrew availability, track readiness, and assign loads across multiple aircraft types.</p>
-          </article>
-
-          <article class="card">
-            <header>
-              <h3>Cognitive Perception</h3>
-              <p class="meta">Ground & Air · Artificial Intelligence</p>
-            </header>
-            <p>Computer vision to assess the alertness state of operators.</p>
-          </article>
-        </div>
-      </section>
-
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="site-footer">
-      <p>© <span id="y"></span> Dylan Lim · Made in USA</p>
-    </footer>
-
-    <script>
-      document.getElementById('y').textContent = new Date().getFullYear();
-    </script>
-  </body>
+</body>
 </html>
